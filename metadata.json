@@ -1,0 +1,6 @@
+{
+  "name": "منصة صقر - دليل وتوصيل تعز",
+  "description": "منصة صقر الرقمية الشاملة لخدمات التوصيل السريع، المشاوير الخاصة، والدليل التجاري والخدمي الموحد لمدينة تعز",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

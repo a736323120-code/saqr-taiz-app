@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Amiri', 'Playfair Display', Georgia, serif;
+
+  /* Saqr Green & Emerald Brand Palette (from mockup image) */
+  --color-saqr-green: #00a86b;
+  --color-saqr-dark: #064e3b;
+  --color-saqr-light: #ecfdf5;
+  --color-saqr-mint: #d1fae5;
+
+  /* Color mapping for Emerald Saqr theme */
+  --color-emerald-950: #022c22;
+  --color-emerald-900: #064e3b;
+  --color-emerald-800: #065f46;
+  --color-emerald-700: #047857;
+  --color-emerald-600: #059669;
+  --color-emerald-500: #10b981;
+  --color-emerald-400: #34d399;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-50: #ecfdf5;
+
+  /* Custom Charcoal & Slate */
+  --color-charcoal-950: #0f172a;
+  --color-charcoal-900: #1e293b;
+  --color-charcoal-800: #334155;
+  --color-charcoal-700: #475569;
+
+  /* Gold & Accent */
+  --color-gold-500: #d4af37;
+  --color-amber-500: #10b981; /* Map amber-500 calls seamlessly to brand emerald green */
+  --color-amber-400: #34d399;
+  --color-amber-300: #6ee7b7;
+  --color-amber-600: #059669;
+}
+
+@layer base {
+  body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: 'Cairo', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body.light-mode {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+
+  body.light-mode ::-webkit-scrollbar-track {
+    background: #e2e8f0;
+  }
+
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 12s linear infinite;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+/* Custom Saqr Brand Utilities */
+.bg-saqr-gradient {
+  background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #10b981 100%);
+}
+
+.bg-saqr-mint-light {
+  background-color: #f0fdf4;
+}
+
+.text-saqr-green {
+  color: #10b981;
+}
+
+.border-saqr-green {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.saqr-card-shadow {
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.12), 0 0 1px 1px rgba(16, 185, 129, 0.15);
+}
+
+/* Custom Scrollbar for Saqr Emerald Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
