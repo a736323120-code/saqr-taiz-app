@@ -19,14 +19,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
-      - name: Setup Java JDK 17
-        uses: actions/setup-java@v4
+      - name: Setup Java JDK 21
+        uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -46,7 +46,7 @@ jobs:
           
           # Initialize capacitor config if not present
           if [ ! -f "capacitor.config.json" ] && [ ! -f "capacitor.config.ts" ]; then
-            npx cap init "طµظ‚ط± طھط¹ط²" "com.saqr.taiz" --web-dir "dist"
+            npx cap init "صقر تعز" "com.saqr.taiz" --web-dir "dist"
           fi
           
           # Add android platform if directory doesn't exist
@@ -78,3 +78,4 @@ jobs:
           name: saqr-taiz-android-apk
           path: build-output/saqr-taiz-app.apk
           retention-days: 30
+          
